@@ -1,4 +1,4 @@
-import { Button, Card, CardBody, CardFooter, CardHeader, Image } from '@nextui-org/react';
+import { Button, Card, CardFooter, CardHeader, Image } from '@nextui-org/react';
 import { ProductProps } from '../../stores/Products';
 import { MdAddShoppingCart } from 'react-icons/md';
 import { useCart } from '../../stores/Cart';
@@ -16,7 +16,6 @@ export default function Product({ product }: ProductItemProps) {
     }).format(product.price).toString()
     
     const __handleAddToCart = useCallback(() => {
-
             addToCart(product)
     }, [addToCart, product])
     return (

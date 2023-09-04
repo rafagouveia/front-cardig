@@ -19,6 +19,7 @@ type StoreProductProps = {
 };
 const initialProducts: ProductProps[] = [
   {
+    id: "1",
     title: "Hamburguer",
     price: 10,
     image: "https://i.imgur.com/vRwd1JO.png",
@@ -26,6 +27,7 @@ const initialProducts: ProductProps[] = [
     category: "1",
   },
   {
+    id: "2",
     title: "Hamburguer Artesanal",
     price: 30,
     image: "https://i.imgur.com/VrzHkss.png",
@@ -33,6 +35,7 @@ const initialProducts: ProductProps[] = [
     category: "1",
   },
   {
+    id: "3",
     title: "Pizza Pequena",
     price: 18,
     image: "https://i.imgur.com/L1Iu6TJ.png",
@@ -40,6 +43,7 @@ const initialProducts: ProductProps[] = [
     category: "2",
   },
   {
+    id: "4",
     title: "Pizza Grande",
     price: 35,
     image: "https://i.imgur.com/2k162Gy.png",
@@ -47,6 +51,7 @@ const initialProducts: ProductProps[] = [
     category: "2",
   },
   {
+    id: "5",
     title: "Pastel Salgado",
     price: 7.5,
     image: "https://i.imgur.com/CF8YAu7.jpg",
@@ -54,6 +59,7 @@ const initialProducts: ProductProps[] = [
     category: "3",
   },
   {
+    id: "6",
     title: "Pastel Doce",
     price: 10,
     image: "https://i.imgur.com/CF8YAu7.jpg",

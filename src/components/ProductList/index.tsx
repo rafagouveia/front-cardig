@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useProduct } from "../../stores/Products";
 import Product from "../Product";
 import { CategoryProps } from "../../stores/Category";

@@ -7,6 +7,7 @@ export type StoreProfileProps = {
     slug: string;
     description: string;
     image: string;
+    frete: number;
     opened: boolean;
     minimal: number | null;
     waitTime: string;
@@ -28,9 +29,10 @@ const initialStoreProfile: StoreProfileProps = {
     slug: "restaurante-1",
     description: "O melhor temaki da cidade",
     image: "https://i.imgur.com/bqsz2Ut.png",
+    frete: 15,
     opened: true,
     minimal: 15,
-    waitTime: "15min -46min",
+    waitTime: "15min - 46min",
     location: "Av. dos Bandeirantes 115",
     delivery: true,
     rating: 0,

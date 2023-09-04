@@ -8,6 +8,7 @@ export default function ContentHome() {
     return (
         <>
             <div className="mt-10">
+         
                 <Input
                     variant="bordered"
                     color="default"
@@ -25,8 +26,11 @@ export default function ContentHome() {
             </div>
             <div className="mt-10">
                 <SectionList />
+                
             </div>
+            <div className="mt-10 w-[200px]">
             <CartButtonFloat/>
+            </div>
         </>
     )
 }
