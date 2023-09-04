@@ -34,12 +34,6 @@ const initialCategories: CategoryProps[] = [
         description: "Sem",
         visible: true,
     },
-    {
-        id: "4",
-        name: "Bebidas",
-        description: "Sem",
-        visible: true,
-    }
 ];
 
 export const useCategory = create<CategoryStoreProps>((set) => ({
