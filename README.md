@@ -1,5 +1,6 @@
 # Cardig - Cardápio Digital
 
+Demo - https://cardig.vercel.app
 
 esse projeto foi desenvolvildo inteiramente para estudos, mas poderá se tornar algo maior no futuro.
 
