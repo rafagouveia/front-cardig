@@ -3,15 +3,15 @@ import { AnimatePresence, motion } from "framer-motion";
 import { MdKeyboardArrowRight, MdShoppingCart, MdDelete } from "react-icons/md";
 import { toPlural, toQuantity } from "../../utils/commons-masks";
 import { useCart } from "../../stores/Cart";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 
 export default function CartButtonFloat() {
-  const navigate = useNavigate();
+  const navigate = useRouter();
   const cart = useCart((state) => state.cart);
   const cleanCart = useCart((state) => state.actions.cleanCart);
   
   const goToCart = () => {
-    navigate("cart");
+    navigate.replace("cart");
   };
 
   const quantity = toQuantity(cart);
@@ -30,6 +30,7 @@ export default function CartButtonFloat() {
             radius="md"
             size="lg"
             color="success"
+            variant="shadow"
             endContent={<MdKeyboardArrowRight size="1.5em" />}
           >
             <Chip
@@ -58,6 +59,7 @@ export default function CartButtonFloat() {
             startContent={<MdDelete size="1.2em" />}
             radius="md"
             size="lg"
+            variant="shadow"
             color="danger"
           >
             Limpar tudo

@@ -1,0 +1,21 @@
+{
+    "name": "Cardig - Cardapio digital",
+    "short_name": "Cardig",
+    "icons": [
+      {
+        "src": "/img/icon-cardig-192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/img/icon-cardig-512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "theme_color": "#FFFFFF",
+    "background_color": "#FFFFFF",
+    "description": "Cardapio digital",
+    "display": "fullscreen",
+    "start_url": "/"
+  }

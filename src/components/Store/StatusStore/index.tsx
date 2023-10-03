@@ -1,15 +1,15 @@
-import { Chip } from "@nextui-org/react";
+import ChipInfo from "../ChipInfo";
 
 type StatusStoreProps = {
     status: boolean;
 }
 export default function StatusStore({ status }: StatusStoreProps) {
 
-    const toStatus = (status) ? "Aberto" : "Fechado"
+    const toStatus = (status) ? "Aberto" : "Fechado" 
     const toColor = (status) ? "success" : "danger"
     return (
-        <Chip variant="dot" color={toColor} radius="sm">
+        <ChipInfo startContent={<span className={`w-2 h-2 bg-${toColor} rounded-full`} />}  size="sm">
             {toStatus}
-        </Chip>
+        </ChipInfo>
     )
 }

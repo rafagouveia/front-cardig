@@ -1,10 +1,23 @@
 import { create } from "zustand";
 
+
+
+export type CategoryListStoreProps = {
+    id: string;
+    name: string;
+    description: string;
+    image: string;
+    location?: string;
+    is_open: boolean;
+    delivery: boolean;
+    freight: number;
+    local: boolean;
+}
 export type CategoryProps = {
     id?: string;
     name: string;
     description: string;
-    visible?: boolean;
+    store: CategoryListStoreProps[];
 };
 
 type ActionsCategoryProps = {
@@ -16,30 +29,13 @@ type CategoryStoreProps = {
 };
 
 const initialCategories: CategoryProps[] = [
-    {
-        id: "1",
-        name: "Hamburguers",
-        description: "Sem",
-        visible: true,
-    },
-    {
-        id: "2",
-        name: "Pizza",
-        description: "Sem",
-        visible: true,
-    },
-    {
-        id: "3",
-        name: "Pastel",
-        description: "Sem",
-        visible: true,
-    },
+
 ];
 
 export const useCategory = create<CategoryStoreProps>((set) => ({
     categories: initialCategories,
     actions: {
         addCategory: (newCategory) =>
-            set(({ categories }) => ({ categories: [...categories, newCategory] })),
+            set(({ categories }) => ({ categories })),
     },
 }));

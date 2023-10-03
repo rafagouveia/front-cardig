@@ -1,28 +1,27 @@
-import { Button, Card, CardFooter, CardHeader, Image } from '@nextui-org/react';
+import { Card, CardFooter, CardHeader, Image } from '@nextui-org/react';
 import { ProductProps } from '../../stores/Products';
-import { MdAddShoppingCart } from 'react-icons/md';
-import { useCart } from '../../stores/Cart';
-import { useCallback } from 'react';
+import { useState } from 'react';
+import ModalProduct from './ModalProduct';
 type ProductItemProps = {
     product: ProductProps
 }
 export default function Product({ product }: ProductItemProps) {
-    const { title } = product
-    const { addToCart } = useCart(state => state.actions)
+    const { name } = product
+    const [modal, setModal] = useState(false)
     const toPrice = Intl.NumberFormat('pt-BR', {
         style: 'currency',
         currency: 'BRL',
         minimumFractionDigits: 2
     }).format(product.price).toString()
-    
-    const __handleAddToCart = useCallback(() => {
-            addToCart(product)
-    }, [addToCart, product])
+
+    const handleSelectProduct = () => {
+     setModal(true)
+    }
     return (
         <div>
-            <Card isFooterBlurred isPressable className="w-full h-[250px] ">
+            <Card onClick={handleSelectProduct} isFooterBlurred isPressable className="w-full h-[250px] ">
                 <CardHeader className="absolute bg-black/40 backdrop-blur-xl z-10 flex-col border-default-600 items-start">
-                    <h4 className="text-white/90 font-medium text-xl">{title}</h4>
+                    <h4 className="text-white/90 font-medium text-xl">{name}</h4>
                 </CardHeader>
                 <Image
                     removeWrapper
@@ -39,9 +38,10 @@ export default function Product({ product }: ProductItemProps) {
                             <p className="text-xl font-extrabold text-white">{toPrice}</p>
                         </div>
                     </div>
-                    <Button radius="full" size="md" onClick={__handleAddToCart} startContent={<MdAddShoppingCart size="1.2em" />}>Adicionar</Button>
+                 
                 </CardFooter>
             </Card>
+            {modal && <ModalProduct product={product} isOpen={modal} setModal={setModal} />}
         </div>
     )
 }

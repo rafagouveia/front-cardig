@@ -1,14 +1,14 @@
 import { Badge, Button } from "@nextui-org/react";
 import { MdShoppingCart } from "react-icons/md";
 import { useCart } from "../../stores/Cart";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { toQuantity } from "../../utils/commons-masks";
 
 export default function CartButton() {
-    const navigate = useNavigate();
+    const navigate = useRouter();
     const cart = useCart(state => state.cart);
     const goToCart = () => {
-        navigate("/cart")
+        navigate.replace("/cart")
     }
     const quantity = toQuantity(cart)
     return (
